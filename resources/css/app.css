@@ -1,0 +1,45 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Inter', system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --color-primary: #f54e00;
+    --color-primary-active: #d04200;
+    --color-ink: #26251e;
+    --color-body: #5a5852;
+    --color-muted: #807d72;
+    --color-hairline: #e6e5e0;
+    --color-hairline-strong: #cfcdc4;
+    --color-canvas: #f7f7f4;
+    --color-canvas-soft: #fafaf7;
+    --color-surface-card: #ffffff;
+    --color-on-primary: #ffffff;
+    --radius-control: 8px;
+    --radius-card: 12px;
+    --spacing-section: 80px;
+    --container-content: 1200px;
+    --text-hero: 72px;
+    --text-hero--line-height: 1.1;
+    --text-hero--letter-spacing: -2.16px;
+    --text-section: 36px;
+    --text-section--line-height: 1.2;
+    --text-section--letter-spacing: -0.72px;
+}
+
+@layer base {
+    :root.dark {
+        --color-ink: #f7f7f4;
+        --color-body: #cfcdc4;
+        --color-muted: #a09c92;
+        --color-hairline: #444239;
+        --color-hairline-strong: #666358;
+        --color-canvas: #26251e;
+        --color-canvas-soft: #302f27;
+        --color-surface-card: #34332b;
+    }
+}
