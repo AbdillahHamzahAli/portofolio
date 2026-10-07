@@ -29,7 +29,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-canvas font-sans text-ink antialiased selection:bg-hairline [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-ink">
+    <body class="flex min-h-dvh flex-col bg-canvas font-sans text-ink antialiased selection:bg-hairline [&_a:focus-visible]:outline-2 [&_a:focus-visible]:outline-offset-4 [&_a:focus-visible]:outline-ink">
         <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-control focus:bg-ink focus:p-4 focus:text-canvas">Lewati ke konten</a>
         <header class="border-b border-hairline">
             <div class="relative mx-auto flex h-16 max-w-content items-center justify-between gap-6 px-6 lg:px-8">
@@ -64,13 +64,12 @@
                 </div>
             </div>
         </header>
-        <main id="main" {{ $attributes->class(['mx-auto max-w-content px-6 lg:px-8']) }}>
+        <main id="main" {{ $attributes->class(['mx-auto w-full max-w-content flex-1 px-6 lg:px-8']) }}>
             {{ $slot }}
         </main>
         <footer class="border-t border-hairline">
             <div class="mx-auto flex max-w-content flex-col justify-between gap-4 px-6 py-12 text-sm text-body sm:flex-row lg:px-8">
                 <p>© {{ date('Y') }} Hamzah Ali Abdillah</p>
-                <a href="#main" class="text-ink hover:underline">Kembali ke atas ↑</a>
             </div>
         </footer>
     </body>

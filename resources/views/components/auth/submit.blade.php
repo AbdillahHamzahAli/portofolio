@@ -1,0 +1,1 @@
+<button type="submit" {{ $attributes->class(['min-h-11 w-full cursor-pointer rounded-control bg-primary px-5 py-3 text-sm font-medium text-on-primary active:bg-primary-active focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink']) }}>{{ $slot }}</button>
