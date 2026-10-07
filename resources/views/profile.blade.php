@@ -19,15 +19,12 @@
         </figure>
     </section>
 
-    <x-resume.section id="pengalaman" number="01" title="Pengalaman kerja" description="Mengembangkan sistem backend untuk kebutuhan nyata, dari API hingga integrasi AI.">
-        <x-resume.experience company="REXTRA TECHNOLOGY" role="Part Time — Backend Developer" period="Okt 2025 — Sekarang" location="Surabaya, Indonesia" description="Startup teknologi pendidikan yang menyediakan layanan rekomendasi dan perencanaan karier di bidang digital.">
-            <li>Mengembangkan REST API dan melakukan integrasi dengan AI.</li>
-            <li>Memperbaiki error atau bug ringan yang ditemukan oleh tim QA maupun pengguna.</li>
-        </x-resume.experience>
-    </x-resume.section>
-
-    <x-resume.section id="organisasi" number="02" title="Organisasi & kolaborasi" description="Bertumbuh bersama tim di bidang teknologi, riset, dan kegiatan mahasiswa.">
+    <x-resume.section id="pengalaman" number="01" title="Pengalaman & Kontribusi" description="Pengalaman pengembangan backend, integrasi AI, dan robotika melalui proyek kerja serta kolaborasi organisasi.">
         <div class="flex flex-col gap-4">
+            <x-resume.experience company="REXTRA TECHNOLOGY" role="Part Time — Backend Developer" period="Okt 2025 — Sekarang" location="Surabaya, Indonesia" description="Startup teknologi pendidikan yang menyediakan layanan rekomendasi dan perencanaan karier di bidang digital.">
+                <li>Mengembangkan REST API dan melakukan integrasi dengan AI.</li>
+                <li>Memperbaiki error atau bug ringan yang ditemukan oleh tim QA maupun pengguna.</li>
+            </x-resume.experience>
             <x-resume.experience company="Bayucaraka" role="Software Engineer" period="Feb 2026 — Sekarang" location="Surabaya, Indonesia" description="Tim riset yang berfokus pada Unmanned Aerial Vehicle (UAV).">
                 <li>Mengembangkan software Ground Control Station.</li>
                 <li>Melakukan konfigurasi UAV.</li>
@@ -49,11 +46,6 @@
                 <li>Berkolaborasi dengan tim untuk mencapai target pengembangan website.</li>
                 <li>Mendokumentasikan desain sistem dan alur kerja backend.</li>
             </x-resume.experience>
-            <x-resume.experience company="SUBMITS × IMJ Jombang" role="Data Management" period="Des 2024 — Jan 2025" location="Jombang, Indonesia" description="Kegiatan tryout dan SUBMITS hasil kolaborasi IniLhoITS dan Forda Jombang.">
-                <li>Melaksanakan sosialisasi mengenai ITS kepada siswa SMA di wilayah Jombang.</li>
-                <li>Mengelola data dan memberikan panduan kepada peserta tryout SUBMITS.</li>
-                <li>Mengoordinasikan pelaksanaan tryout sebagai penanggung jawab peserta.</li>
-            </x-resume.experience>
             <x-resume.experience company="RIVAL ITS" role="Intern Programming Division" period="Agu 2024 — Nov 2024" location="Surabaya, Indonesia" description="Seleksi magang divisi programming pada tim riset robotika ITS yang berfokus pada robot tematik.">
                 <li>Pemrograman C++ dan computer vision dengan modul OpenCV.</li>
                 <li>Pemrograman robot menggunakan Robot Operating System (ROS).</li>
@@ -62,7 +54,7 @@
         </div>
     </x-resume.section>
 
-    <x-resume.section id="pendidikan" number="03" title="Pendidikan" description="Fondasi akademik dalam informatika dan ilmu pengetahuan alam.">
+    <x-resume.section id="pendidikan" number="02" title="Pendidikan" description="Fondasi akademik dalam informatika dan ilmu pengetahuan alam.">
         <div class="flex flex-col gap-6">
             <article class="rounded-card border border-hairline bg-surface-card p-6">
                 <p class="mb-4 text-xs text-body">Jun 2024</p>
@@ -79,7 +71,7 @@
         </div>
     </x-resume.section>
 
-    <x-resume.section id="keahlian" number="04" title="Keahlian & pengembangan" description="Teknologi dan keterampilan yang digunakan dalam pengalaman kerja serta organisasi.">
+    <x-resume.section id="keahlian" number="03" title="Keahlian & pengembangan" description="Teknologi dan keterampilan yang digunakan dalam pengalaman kerja serta organisasi.">
         <div class="grid gap-6 sm:grid-cols-2">
             <div>
                 <h3 class="mb-4 text-base font-semibold">Backend & API</h3>
