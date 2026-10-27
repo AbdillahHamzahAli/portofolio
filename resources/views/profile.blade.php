@@ -20,37 +20,96 @@
     </section>
 
     <x-resume.section id="pengalaman" number="01" title="Pengalaman & Kontribusi" description="Pengalaman pengembangan backend, integrasi AI, dan robotika melalui proyek kerja serta kolaborasi organisasi.">
-        <div class="flex flex-col gap-4">
-            <x-resume.experience company="REXTRA TECHNOLOGY" role="Part Time — Backend Developer" period="Okt 2025 — Sekarang" location="Surabaya, Indonesia" description="Startup teknologi pendidikan yang menyediakan layanan rekomendasi dan perencanaan karier di bidang digital.">
-                <li>Mengembangkan REST API dan melakukan integrasi dengan AI.</li>
-                <li>Memperbaiki error atau bug ringan yang ditemukan oleh tim QA maupun pengguna.</li>
-            </x-resume.experience>
-            <x-resume.experience company="Bayucaraka" role="Software Engineer" period="Feb 2026 — Sekarang" location="Surabaya, Indonesia" description="Tim riset yang berfokus pada Unmanned Aerial Vehicle (UAV).">
-                <li>Mengembangkan software Ground Control Station.</li>
-                <li>Melakukan konfigurasi UAV.</li>
-            </x-resume.experience>
-            <x-resume.experience company="IEEE BIG ITS" role="Manager Web Development" period="Des 2025 — Sekarang" location="Surabaya, Indonesia" description="Acara tahunan yang menghubungkan mahasiswa, akademisi, dan praktisi industri melalui kompetisi serta kolaborasi teknologi.">
-                <li>Menyusun timeline kerja, melakukan sprint planning, dan mengawasi deadline.</li>
-                <li>Menjaga kualitas kode melalui code review dan pengujian otomatis.</li>
-            </x-resume.experience>
-            <x-resume.experience company="Society of Renewable Energy ITS (SRE ITS SC)" role="Backend Developer" period="Agu 2025 — Sekarang" description="Organisasi energi terbarukan yang mendorong inovasi, ide, dan pembelajaran interaktif di kalangan mahasiswa.">
-                <li>Merancang, membangun, dan mengelola service API berbasis Go (Golang) untuk sistem informasi internal organisasi.</li>
-                <li>Menulis dokumentasi API yang komprehensif untuk mempermudah kolaborasi antartim.</li>
-            </x-resume.experience>
-            <x-resume.experience company="Surabaya MUN Club" role="Backend Developer" period="Mei 2025 — Okt 2025" location="Surabaya, Indonesia" description="Kompetisi Model United Nations oleh ITS MUN Club, sebagai wadah kolaborasi, negosiasi, dan diskusi isu global.">
-                <li>Mendesain dan mengimplementasikan arsitektur RESTful API sesuai kebutuhan aplikasi.</li>
-                <li>Berkoordinasi dengan tim frontend dan product untuk memastikan integrasi yang mulus.</li>
-            </x-resume.experience>
-            <x-resume.experience company="Schematics 2025" role="Backend Developer" period="Mar 2025 — Nov 2025" location="Surabaya, Indonesia" description="Kegiatan Departemen Teknik Informatika ITS yang berfokus pada perlombaan dan pelatihan teknologi.">
-                <li>Merancang dan mengembangkan API website Schematics.</li>
-                <li>Berkolaborasi dengan tim untuk mencapai target pengembangan website.</li>
-                <li>Mendokumentasikan desain sistem dan alur kerja backend.</li>
-            </x-resume.experience>
-            <x-resume.experience company="RIVAL ITS" role="Intern Programming Division" period="Agu 2024 — Nov 2024" location="Surabaya, Indonesia" description="Seleksi magang divisi programming pada tim riset robotika ITS yang berfokus pada robot tematik.">
-                <li>Pemrograman C++ dan computer vision dengan modul OpenCV.</li>
-                <li>Pemrograman robot menggunakan Robot Operating System (ROS).</li>
-                <li>Membuat autonomous robot transporter.</li>
-            </x-resume.experience>
+        @php
+            $experiences = [
+                [
+                    'company' => 'REXTRA TECHNOLOGY',
+                    'role' => 'Part Time — Backend Developer',
+                    'period' => 'Okt 2025 — Sekarang',
+                    'location' => 'Surabaya, Indonesia',
+                    'description' => 'Startup teknologi pendidikan yang menyediakan layanan rekomendasi dan perencanaan karier di bidang digital.',
+                    'points' => [
+                        'Mengembangkan REST API dan melakukan integrasi dengan AI.',
+                        'Memperbaiki error atau bug ringan yang ditemukan oleh tim QA maupun pengguna.',
+                    ],
+                ],
+                [
+                    'company' => 'Bayucaraka',
+                    'role' => 'Software Engineer',
+                    'period' => 'Feb 2026 — Sekarang',
+                    'location' => 'Surabaya, Indonesia',
+                    'description' => 'Tim riset yang berfokus pada Unmanned Aerial Vehicle (UAV).',
+                    'points' => [
+                        'Mengembangkan software Ground Control Station.',
+                        'Melakukan konfigurasi UAV.',
+                    ],
+                ],
+                [
+                    'company' => 'IEEE BIG ITS',
+                    'role' => 'Manager Web Development',
+                    'period' => 'Des 2025 — Sekarang',
+                    'location' => 'Surabaya, Indonesia',
+                    'description' => 'Acara tahunan yang menghubungkan mahasiswa, akademisi, dan praktisi industri melalui kompetisi serta kolaborasi teknologi.',
+                    'points' => [
+                        'Menyusun timeline kerja, melakukan sprint planning, dan mengawasi deadline.',
+                        'Menjaga kualitas kode melalui code review dan pengujian otomatis.',
+                    ],
+                ],
+                [
+                    'company' => 'Society of Renewable Energy ITS (SRE ITS SC)',
+                    'role' => 'Backend Developer',
+                    'period' => 'Agu 2025 — Sekarang',
+                    'description' => 'Organisasi energi terbarukan yang mendorong inovasi, ide, dan pembelajaran interaktif di kalangan mahasiswa.',
+                    'points' => [
+                        'Merancang, membangun, dan mengelola service API berbasis Go (Golang) untuk sistem informasi internal organisasi.',
+                        'Menulis dokumentasi API yang komprehensif untuk mempermudah kolaborasi antartim.',
+                    ],
+                ],
+                [
+                    'company' => 'Surabaya MUN Club',
+                    'role' => 'Backend Developer',
+                    'period' => 'Mei 2025 — Okt 2025',
+                    'location' => 'Surabaya, Indonesia',
+                    'description' => 'Kompetisi Model United Nations oleh ITS MUN Club, sebagai wadah kolaborasi, negosiasi, dan diskusi isu global.',
+                    'points' => [
+                        'Mendesain dan mengimplementasikan arsitektur RESTful API sesuai kebutuhan aplikasi.',
+                        'Berkoordinasi dengan tim frontend dan product untuk memastikan integrasi yang mulus.',
+                    ],
+                ],
+                [
+                    'company' => 'Schematics 2025',
+                    'role' => 'Backend Developer',
+                    'period' => 'Mar 2025 — Nov 2025',
+                    'location' => 'Surabaya, Indonesia',
+                    'description' => 'Kegiatan Departemen Teknik Informatika ITS yang berfokus pada perlombaan dan pelatihan teknologi.',
+                    'points' => [
+                        'Merancang dan mengembangkan API website Schematics.',
+                        'Berkolaborasi dengan tim untuk mencapai target pengembangan website.',
+                        'Mendokumentasikan desain sistem dan alur kerja backend.',
+                    ],
+                ],
+                [
+                    'company' => 'RIVAL ITS',
+                    'role' => 'Intern Programming Division',
+                    'period' => 'Agu 2024 — Nov 2024',
+                    'location' => 'Surabaya, Indonesia',
+                    'description' => 'Seleksi magang divisi programming pada tim riset robotika ITS yang berfokus pada robot tematik.',
+                    'points' => [
+                        'Pemrograman C++ dan computer vision dengan modul OpenCV.',
+                        'Pemrograman robot menggunakan Robot Operating System (ROS).',
+                        'Membuat autonomous robot transporter.',
+                    ],
+                ],
+            ];
+        @endphp
+        <div tabindex="0" role="region" aria-label="Daftar pengalaman dan kontribusi" data-infinite-scroll class="flex max-h-[520px] snap-y snap-mandatory flex-col gap-4 overflow-y-auto [scrollbar-width:thin] [scrollbar-color:var(--color-hairline-strong)_transparent]">
+            @foreach ([...$experiences, ...$experiences] as $experience)
+                <x-resume.experience class="snap-center" :company="$experience['company']" :role="$experience['role']" :period="$experience['period']" :location="$experience['location'] ?? null" :description="$experience['description'] ?? null">
+                    @foreach ($experience['points'] as $point)
+                        <li>{{ $point }}</li>
+                    @endforeach
+                </x-resume.experience>
+            @endforeach
         </div>
     </x-resume.section>
 
