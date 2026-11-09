@@ -23,12 +23,12 @@ class CreateAdmin extends Command
 
         $name = $this->ask('Nama admin');
         $email = $this->ask('Email admin');
-        $password = $this->secret('Kata sandi (minimal 12 karakter)');
+        $password = $this->secret('Kata sandi (minimal 8 karakter)');
         $confirmation = $this->secret('Konfirmasi kata sandi');
 
         $validator = Validator::make(
             ['name' => $name, 'email' => $email, 'password' => $password, 'password_confirmation' => $confirmation],
-            ['name' => ['required', 'string', 'max:255'], 'email' => ['required', 'email', 'max:255', 'unique:users,email'], 'password' => ['required', 'confirmed', Password::min(12)]],
+            ['name' => ['required', 'string', 'max:255'], 'email' => ['required', 'email', 'max:255', 'unique:users,email'], 'password' => ['required', 'confirmed', Password::min(8)]],
         );
 
         if ($validator->fails()) {

@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * Body must contain HTML sanitized by the writing boundary before persistence.
  * Cover paths are relative to the public disk; media paths are relative to their disk.
  */
-#[Fillable(['title', 'slug', 'excerpt', 'body', 'cover_path', 'cover_alt', 'status', 'published_at'])]
+#[Fillable(['user_id', 'title', 'slug', 'excerpt', 'body', 'cover_path', 'cover_alt', 'status', 'published_at'])]
 class Post extends Model
 {
     /** @use HasFactory<PostFactory> */

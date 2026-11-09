@@ -5,7 +5,7 @@
 
 ## Foundational Context
 
-This application is a Laravel application running on PHP 8.5. Always use the APIs that match the installed major version of each package — do not assume a version.
+This application is a Laravel application running on PHP 8.4. Always use the APIs that match the installed major version of each package — do not assume a version.
 
 Before relying on a package's API, confirm its installed version:
 - PHP packages: run `composer show --direct` to list direct dependencies with versions, or `composer show <vendor/package>` for a single package.
@@ -33,14 +33,6 @@ This project has domain-specific skills available in `**/skills/**`. You MUST ac
 ## Frontend Bundling
 
 - If a frontend change doesn't show in the UI or you get a "Unable to locate file in Vite manifest" error, run `npm run build` or ask the user to run `npm run dev` or `composer run dev`.
-
-## Design and Styling
-
-- Before creating or changing any UI, read the project-root `DESIGN.md` and use it as the source of truth for colors, typography, spacing, components, and responsive behavior.
-- Use Tailwind CSS utilities for UI styling, including responsive states. Follow the installed Tailwind version and the project's existing conventions; define reusable design tokens in the Tailwind theme when needed instead of repeating hard-coded values.
-- Avoid inline styles, component-specific custom CSS, and additional styling frameworks unless Tailwind utilities cannot reasonably express the requirement. Keep any necessary global CSS limited to concerns such as theme tokens and font setup.
-- Keep Cursor Orange limited to primary CTAs and the wordmark, and use timeline colors only for in-product agent timeline visualizations. Do not add drop shadows or bold display headings contrary to `DESIGN.md`.
-- Do not assume CursorGothic is available or licensed; use the substitute specified in `DESIGN.md` when necessary. If a requested design conflicts with `DESIGN.md`, clarify the intended exception before implementing it.
 
 ## Documentation Files
 
