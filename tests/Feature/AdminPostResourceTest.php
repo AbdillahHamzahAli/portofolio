@@ -36,5 +36,28 @@ test('posts created through the resource belong to the authenticated administrat
     $post = Post::query()->where('slug', 'artikel-filament')->firstOrFail();
 
     expect($post->user_id)->toBe($admin->id)
-        ->and($post->status)->toBe(PostStatus::Draft);
+        ->and($post->status)->toBe(PostStatus::Draft)
+        ->and($post->published_at)->toBeNull();
+});
+
+test('published posts receive their publication date automatically', function () {
+    $admin = User::factory()->create(['is_admin' => true]);
+
+    $this->actingAs($admin);
+
+    Livewire::test(CreatePost::class)
+        ->fillForm([
+            'title' => 'Artikel Terbit',
+            'slug' => 'artikel-terbit',
+            'excerpt' => 'Deskripsi artikel.',
+            'body' => '<p>Isi artikel.</p>',
+            'status' => PostStatus::Published->value,
+        ])
+        ->call('create')
+        ->assertHasNoFormErrors();
+
+    $post = Post::query()->where('slug', 'artikel-terbit')->firstOrFail();
+
+    expect($post->status)->toBe(PostStatus::Published)
+        ->and($post->published_at)->not->toBeNull();
 });
