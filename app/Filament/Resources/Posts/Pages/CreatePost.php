@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Posts\Pages;
 use App\Filament\Resources\Posts\PostResource;
 use App\Models\PostStatus;
 use Filament\Resources\Pages\CreateRecord;
+use Illuminate\Support\Facades\Auth;
 
 class CreatePost extends CreateRecord
 {
@@ -19,7 +20,7 @@ class CreatePost extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
-        $data['user_id'] = auth()->id();
+        $data['user_id'] = Auth::id();
         $status = $data['status'] instanceof PostStatus
             ? $data['status']
             : PostStatus::tryFrom((string) $data['status']);

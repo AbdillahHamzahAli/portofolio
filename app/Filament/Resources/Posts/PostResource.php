@@ -14,6 +14,7 @@ use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Auth;
 
 class PostResource extends Resource
 {
@@ -29,7 +30,7 @@ class PostResource extends Resource
             return $query;
         }
 
-        return $query->where('user_id', auth()->id());
+        return $query->where('user_id', Auth::id());
     }
 
     public static function form(Schema $schema): Schema
