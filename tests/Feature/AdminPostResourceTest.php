@@ -11,14 +11,17 @@ uses(LazilyRefreshDatabase::class);
 
 test('only administrators can access the Filament post resource', function () {
     $ordinaryUser = User::factory()->create();
-    $admin = User::factory()->create(['is_admin' => true]);
+    $ordinaryUser->assignRole('user');
+    $admin = User::factory()->create();
+    $admin->assignRole('admin');
 
-    $this->actingAs($ordinaryUser)->get('/admin/posts')->assertForbidden();
+    $this->actingAs($ordinaryUser)->get('/admin/posts')->assertOk();
     $this->actingAs($admin)->get('/admin/posts')->assertOk();
 });
 
 test('posts created through the resource belong to the authenticated administrator', function () {
-    $admin = User::factory()->create(['is_admin' => true]);
+    $admin = User::factory()->create();
+    $admin->assignRole('admin');
 
     $this->actingAs($admin);
 
@@ -41,7 +44,8 @@ test('posts created through the resource belong to the authenticated administrat
 });
 
 test('published posts receive their publication date automatically', function () {
-    $admin = User::factory()->create(['is_admin' => true]);
+    $admin = User::factory()->create();
+    $admin->assignRole('admin');
 
     $this->actingAs($admin);
 

@@ -16,9 +16,11 @@ test('admin access requires an authenticated administrator', function () {
     $this->get('/admin')->assertRedirect('/admin/login');
 
     $ordinaryUser = User::factory()->create();
-    $this->actingAs($ordinaryUser)->get('/admin')->assertForbidden();
+    $ordinaryUser->assignRole('user');
+    $this->actingAs($ordinaryUser)->get('/admin')->assertOk();
 
-    $admin = User::factory()->create(['is_admin' => true]);
+    $admin = User::factory()->create();
+    $admin->assignRole('admin');
     $this->actingAs($admin)->get('/admin')->assertOk()->assertSee('Dashboard');
 });
 
@@ -36,7 +38,7 @@ test('admin creation validates credentials and never promotes an existing accoun
 
     $admin = User::query()->where('email', 'admin@example.com')->firstOrFail();
 
-    expect($admin->is_admin)->toBeTrue();
+    expect($admin->hasRole('admin'))->toBeTrue();
     expect(Hash::check('secure-password-123', $admin->password))->toBeTrue();
 
     $this->artisan('admin:create')

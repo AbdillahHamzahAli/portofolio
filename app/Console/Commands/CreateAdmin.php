@@ -41,8 +41,8 @@ class CreateAdmin extends Command
 
         $user = new User;
         $user->fill(['name' => $name, 'email' => $email, 'password' => $password]);
-        $user->is_admin = true;
         $user->save();
+        $user->assignRole('admin');
 
         $this->info('Akun admin berhasil dibuat.');
 

@@ -20,6 +20,10 @@ class PostSeeder extends Seeder
             'email' => 'author@example.com',
         ]);
 
+        if (! $author->roles()->exists()) {
+            $author->assignRole('user');
+        }
+
         $articles = [
             [
                 'title' => 'Membangun REST API yang Mudah Dipelihara',
